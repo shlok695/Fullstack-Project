@@ -18,14 +18,17 @@ app.use(cors({
     origin: process.env.FRONTEND_ORIGIN, // e.g. http://localhost:3000
     credentials: true,
 }));
-//test comment new
+
+//test new db connection.
 // Connect DB
-mongoose.connect(process.env.MONGODB_URL)
-    .then(() => console.log('Database connected'))
-    .catch((err) => {
-        console.error('DB connection error:', err);
-        process.exit(1);
-    });
+if (process.env.NODE_ENV !== "test") {
+    mongoose.connect(process.env.MONGODB_URL)
+        .then(() => console.log('Database connected'))
+        .catch((err) => {
+            console.error('DB connection error:', err);
+            process.exit(1);
+        });
+}
 
 // Routes
 app.use('/api/auth', authRoutes);
