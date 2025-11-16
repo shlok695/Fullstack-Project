@@ -36,12 +36,6 @@ jobs:
 
       - name: Start app
         run: npm start &
-      
-      - name: Fix Jest permissions
-        run: chmod +x node_modules/.bin/jest || true
-        
+
       - name: Run tests
         run: npm test
-
-    env:
-        NODE_ENV: test
