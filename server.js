@@ -18,7 +18,7 @@ app.use(cors({
     origin: process.env.FRONTEND_ORIGIN, // e.g. http://localhost:3000
     credentials: true,
 }));
-
+//test comment new
 // Connect DB
 mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log('Database connected'))
