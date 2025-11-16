@@ -23,14 +23,7 @@ app.use(cors({
 
 //test new db connection.
 // Connect DB
-if (process.env.NODE_ENV !== "test") {
-    mongoose.connect(process.env.MONGODB_URL)
-        .then(() => console.log('Database connected'))
-        .catch((err) => {
-            console.error('DB connection error:', err);
-            process.exit(1);
-        });
-}
+mongoose.connect(process.env.MONGODB_URL) .then(() => console.log('Database connected')) .catch((err) => { console.error('DB connection error:', err); process.exit(1); });
 
 // Routes
 app.use('/api/auth', authRoutes);
