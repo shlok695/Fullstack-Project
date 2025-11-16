@@ -82,4 +82,8 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      env:
+        NODE_ENV: test
+
 >>>>>>> 156678eb3e0d66605fc592a49e43fe27da412262
